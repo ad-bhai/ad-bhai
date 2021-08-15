@@ -1,0 +1,44 @@
+import random
+import math
+print("Welcome to guess the number challenge."
+      "\nThe number you have to guess is a positive number between 1 and 100.\nLets get it.\n")
+n=1
+
+num = random.randint(1,100)
+print("you have got",9, "chances to guess.")
+while n<=9  :
+    i = int(input("Guess the number:\n"))
+    if i==num:
+        print("You got it right.Congratulations.")
+        print("You took", n, "attempts to guess the number.")
+
+        break
+    elif i<num and i>num-3:
+        if n==9:
+            break
+        print("You are very close.Go very slightly up.")
+    elif i<num-2 and i>=0:
+        if n==9:
+            break
+        print("You are a little bit far.Go a bit up.")
+    elif i>num and i<num+7:
+        if n==9:
+            break
+        print("You are very close.Go very slightly down.")
+    elif i>num+6 and i<num+17:
+        if n==9:
+            break
+        print("You are a little bit far.Go a bit down.")
+    else:
+        if n==9:
+            break
+        print("You are very far.Go down.")
+    a=9-n
+    n = n + 1
+    print("You got",a,"guesses left.")
+if n > 8:
+    if i == 18:
+        print("")
+    else:
+        print("You got 0 guesses left.")
+        print("Game over.")
